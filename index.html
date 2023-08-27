@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme App</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body onload="onInit()" >
+  <h1 class="headTitle" data-trans="title">Meme Generator</h1>
+  <button data-trans="back" class="backGallery" onclick="goBack()" style="display: none;">Back To Gallery ←</button>
+
+<header>
+    <nav class="headNav">
+        <div class="logo" onclick="goBack()"> <img class="logoImg" src="logomemo.jpg" alt="logo Icon"></div>
+        <select class="selectLng" onchange="onSetLang(this.value)">
+            <option value="en">English</option>
+            <option value="he">עברית</option>
+        </select>
+
+        <button data-trans="btnSavedProjects" class="savedMemes" onclick="enterToSavedProjects()">Saved Memes</button>
+    </nav>
+
+
+<section class="saved-memes-container"></section>
+</header>
+    <section class="gallery">
+
+    </section>
+
+  
+    <div class="part2">
+         
+
+
+        <section class="editor" style="display: none;">
+            <a href="#" data-trans="download"class="btn-a" onclick="downloadImg(this)" download="my-img.jpg">Download as jpeg</a>
+        
+              <div class="button-container">
+           
+                <button class="addSticker" data-trans="addStikerBtn" onclick="toggleStickerMenu()"></button>
+             
+              </div>
+            <div class="stiker" style="display: none;">
+                <div class="modal-content">
+                    <div class="sticker-icon" draggable="true">❤</div>
+                    <div class="sticker-icon" draggable="true">🚑</div>
+                    <div class="sticker-icon" draggable="true">🚆</div>
+                    <div class="sticker-icon" draggable="true">🥙</div>
+                    <div class="sticker-icon" draggable="true">🥖</div>
+                    <div class="sticker-icon" draggable="true">👱‍♀️</div>
+                    <div class="sticker-icon" draggable="true">😂</div>
+                    <div class="sticker-icon" draggable="true">😪</div>
+                    <div class="sticker-icon" draggable="true">😫</div>
+                    <div class="sticker-icon" draggable="true">🙉</div>
+                    <div class="sticker-icon" draggable="true">🥰</div>
+                    <div class="sticker-icon" draggable="true">🙊</div>
+                    <div class="sticker-icon" draggable="true">🙉</div>
+                    <div class="sticker-icon" draggable="true">🙈</div>
+                    <div class="sticker-icon" draggable="true">😨</div>
+                    <div class="sticker-icon" draggable="true">🥵</div>
+                    <div class="sticker-icon" draggable="true">🤑</div>
+                    <div class="sticker-icon" draggable="true">🥶</div>
+                    <div class="sticker-icon" draggable="true">👄</div>
+                    <div class="sticker-icon" draggable="true">👅</div>
+                    <div class="sticker-icon" draggable="true">🤔</div>
+                    <div class="sticker-icon" draggable="true">👩🏾‍🤝‍🧑🏾</div>
+                    <div class="sticker-icon" draggable="true">👨‍👩‍👦‍👦</div>
+                    <div class="sticker-icon" draggable="true">👨‍👦</div>
+                    <div class="sticker-icon" draggable="true">🐭</div>
+                    <div class="sticker-icon" draggable="true">😛</div>
+                    <div class="sticker-icon" draggable="true">🙄</div>
+                    <div class="sticker-icon" draggable="true">😈</div>
+                    <div class="sticker-icon" draggable="true">😭</div>
+                    <div class="sticker-icon" draggable="true">😲</div>
+                    <div class="sticker-icon" draggable="true">😈</div>
+                    <div class="sticker-icon" draggable="true">😏</div>
+                    <div class="sticker-icon" draggable="true">🎪</div>
+                    <div class="sticker-icon" draggable="true">🎆</div>
+                    <div class="sticker-icon" draggable="true">🎇</div>
+                    <div class="sticker-icon" draggable="true">🎃</div>
+                    <div class="sticker-icon" draggable="true">💔</div>
+                    <div class="sticker-icon" draggable="true">❣</div>
+                    <div class="sticker-icon" draggable="true">💙</div>
+                    <div class="sticker-icon" draggable="true">💜</div>
+                    <div class="sticker-icon" draggable="true">💓</div>
+                    <div class="sticker-icon" draggable="true">🎁</div>
+                    <div class="sticker-icon" draggable="true">🤷‍♀️</div>
+                    <div class="sticker-icon" draggable="true">🙋‍♀️</div>
+                    <div class="sticker-icon" draggable="true">🙄</div>
+                    <div class="sticker-icon" draggable="true">🐴</div>
+                    <div class="sticker-icon" draggable="true">🤐</div>
+                </div>
+            </div>
+
+        
+            <input type="text" id="my-text"  data-trans="enterTextPlaceHolder" placeholder="enter text... "  style="display: none; font-size: 50px;"
+                oninput="changeText()">
+            <label for="fontSelector" data-trans="selectFont">Select a Font:</label>
+            <select id="fontSelector" onchange="changeFamilyFont()">
+                <option value="Arial">Arial</option>
+                <option value="David">David</option>
+                <option value="Aharoni">Aharoni</option>
+                <option value="Georiga">Georiga</option>
+                <option value="Alef">Alef</option>
+                <option value="Impact">Impact</option>
+                <option value="Dancing Script">Dancing Script</option>
+
+                <input type="color" id="textColorPicker" value="#000000" oninput="handleColorInput(this.value)">
+                <button class="increaseFontSizeBtn" onclick="onIncreaseFontSize()" ">➕</button>
+                <button class="decreaseFontSizeBtn" onclick="onDecreaseFontSize()" >➖</button>
+                <button id="saveButton"  data-trans="saveBtn" clsss="save" onclick="save()"">Save</button>
+            </select>
+
+        </section>
+    
+        <canvas id="my-canvas" class="langg" width="1000" height="1000">
+        </canvas>
+  
+      
+    </div>
+   
+    <footer class="editorFooter" style="display: none;">
+        <small>© 2023 MemoGenerator.com - All Rights Reserved develop by Sharon Bash - Memo App </small>
+
+        <div class="button-container-footer">
+            <button  class="icon-img" onclick="shareOnWhatsApp()">
+                <img class="icon-img" src="icons/whatsapp.png" alt="WhatsApp Icon">
+            </button>
+
+            <button class="icon-img" onclick="onUploadImg()">
+                <img class="icon-img" src="icons/f.jpg" alt="Facebook Icon">
+              </button>
+              <li class="twitter"><a href="#"><img class="icon-img" src="icons/twitter.png"></a></li>
+              <li class="instagram"><a href="#"><img class="icon-img" src="icons/instagram.png"></a></li>
+              <li class="linkedIn"><a href="#"><img class="icon-img" src="icons/linkedin.png"></a></li>
+        </div>
+    </footer>
+
+
+
+</body>
+
+<script src="js/services/utilService.js"></script>
+<script src="js/services/memeService.js"></script>
+<script src="js/services/i18n.service.js"></script>
+<script src="js/memeController.js"></script>
+<script src="js/upload-from-local.js"></script>
+<script src="js/sharing-on-facebook.js"></script>
+
+</html>

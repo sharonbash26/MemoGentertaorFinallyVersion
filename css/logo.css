@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    cursor: pointer;
+}
+
+.logoImg {
+    width: 100px;
+}

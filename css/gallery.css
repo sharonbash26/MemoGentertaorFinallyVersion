@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+.gallery {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.galleryImg {
+    max-width: 100%;
+    border: 6px solid transparent;
+    transition: border-color 0.3s;
+    cursor: pointer;
+}
+
+.galleryImg:hover {
+    border-color: var(--clrBlack);
+}

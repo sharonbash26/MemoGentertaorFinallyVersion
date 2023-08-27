@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: rgb(69, 68, 68);
+}
+
+.editor {
+    display: flex;
+    background-color: var(--clrEditorBackground);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.stiker {
+    display: none;
+    margin-top: 10px;
+}
+
+.modal-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.sticker-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.saved-memes-container {
+    margin-top: 40px;
+}
